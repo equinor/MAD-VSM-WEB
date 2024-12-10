@@ -50,7 +50,7 @@ export const MainActivityNode = ({
   const [hoveringShape, setHoveringShape] = useState(false);
   const { addNode, isNodeButtonDisabled } = useNodeAdd();
 
-  const isEditingNode = useIsEditingNode(selected);
+  const { isEditingNode, editNodeData } = useIsEditingNode(selected, data);
 
   const handleQIPRContainerOnClick = useQIPRContainerOnClick(data);
   const shouldDisplayQIPR = useShouldDisplayQIPR(tasks, hovering, selected);
@@ -158,6 +158,7 @@ export const MainActivityNode = ({
         includeDuration={false}
         includeEstimate
         estimate={formattedDurationSum}
+        editNodeData={editNodeData}
       />
       {renderNodeButtons()}
     </div>

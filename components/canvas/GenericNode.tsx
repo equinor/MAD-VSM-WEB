@@ -41,7 +41,7 @@ export const GenericNode = ({
   const [hovering, setHovering] = useState(false);
   const [hoveringShape, setHoveringShape] = useState(false);
   const { addNode, isNodeButtonDisabled } = useNodeAdd();
-  const isEditingNode = useIsEditingNode(selected);
+  const { isEditingNode, editNodeData } = useIsEditingNode(selected, data);
 
   const handleQIPRContainerOnClick = useQIPRContainerOnClick(data);
   const shouldDisplayQIPR = useShouldDisplayQIPR(tasks, hovering, selected);
@@ -120,6 +120,7 @@ export const GenericNode = ({
         includeRole={false}
         includeDuration={false}
         includeEstimate={false}
+        editNodeData={editNodeData}
       />
       {renderNodeButtons()}
     </div>

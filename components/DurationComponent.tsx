@@ -9,7 +9,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { sortSearch } from "@/utils/sortSearch";
 
 type DurationComponent = {
-  selectedNode: NodeDataCommon;
+  selectedNode: NodeDataCommon | undefined;
   onChangeDuration: (e: {
     duration: number | null;
     unit: string | null;
@@ -23,16 +23,18 @@ export function DurationComponent({
   disabled,
 }: DurationComponent) {
   const [duration, setDuration] = useState<number | null>(
-    selectedNode.duration
+    selectedNode?.duration ?? null
   );
-  const [unit, setUnit] = useState<string | null>(selectedNode.unit);
+  const [unit, setUnit] = useState<string | null>(selectedNode?.unit ?? null);
   const [unitSearchInput, setUnitSearchInput] = useState("");
 
   const timeDefinitionDisplayNames = getTimeDefinitionDisplayNames();
 
   useEffect(() => {
-    setDuration(selectedNode.duration);
-    setUnit(selectedNode.unit);
+    if (selectedNode) {
+      setDuration(selectedNode.duration);
+      setUnit(selectedNode.unit);
+    }
   }, [selectedNode]);
 
   const parseValue = (value: string) =>

@@ -46,6 +46,7 @@ type NodeTooltipProps = Pick<NodeTooltipContainerProps, "position"> & {
   nodeData: NodeDataCommon;
   isHovering?: boolean;
   isEditing?: boolean;
+  editNodeData: NodeDataCommon | undefined;
 } & Field<"includeDescription", "description"> &
   Field<"includeDuration", "duration"> &
   Field<"includeEstimate", "estimate"> &
@@ -64,6 +65,7 @@ export const NodeTooltip = ({
   isEditing,
   position,
   nodeData,
+  editNodeData,
 }: NodeTooltipProps) => {
   const editingStyle = { minWidth: "300px" };
   const tooltipStyle = isEditing ? editingStyle : undefined;
@@ -85,6 +87,7 @@ export const NodeTooltip = ({
           text={description}
           variant="description"
           isEditing={isEditing}
+          editNodeData={editNodeData}
         />
       )}
       {shouldDisplayRole && (
@@ -94,6 +97,7 @@ export const NodeTooltip = ({
           text={role}
           variant="role"
           isEditing={isEditing}
+          editNodeData={editNodeData}
         />
       )}
       {shouldDisplayDuration && (
@@ -103,6 +107,7 @@ export const NodeTooltip = ({
           nodeData={nodeData}
           text={duration}
           isEditing={isEditing}
+          editNodeData={editNodeData}
         />
       )}
       {shouldDisplayEstimate && (
@@ -111,6 +116,7 @@ export const NodeTooltip = ({
           text={estimate}
           variant="duration"
           nodeData={nodeData}
+          editNodeData={editNodeData}
         />
       )}
     </NodeTooltipContainer>

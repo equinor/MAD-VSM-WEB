@@ -47,7 +47,7 @@ export const ChoiceNode = ({
   const { addNode, isNodeButtonDisabled } = useNodeAdd();
   const connectionNodeId = useStore((state) => state.connectionNodeId);
   const lastChild = children[children?.length - 1];
-  const isEditingNode = useIsEditingNode(selected);
+  const { isEditingNode, editNodeData } = useIsEditingNode(selected, data);
 
   useEffect(() => {
     setHovering(false);
@@ -183,6 +183,7 @@ export const ChoiceNode = ({
         includeRole={false}
         includeDuration={false}
         includeEstimate={false}
+        editNodeData={editNodeData}
       />
       {renderNodeButtons()}
     </div>

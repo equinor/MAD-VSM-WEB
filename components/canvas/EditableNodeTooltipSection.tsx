@@ -17,6 +17,7 @@ type EditableNodeTooltipSectionProps = {
   isEditing?: boolean;
   variant: "description" | "duration" | "role";
   nodeData: NodeDataCommon;
+  editNodeData: NodeDataCommon | undefined;
 };
 
 export const EditableNodeTooltipSection = ({
@@ -25,6 +26,7 @@ export const EditableNodeTooltipSection = ({
   isEditing,
   variant = "description",
   nodeData,
+  editNodeData,
 }: EditableNodeTooltipSectionProps) => {
   const { patchDescription, patchDuration, patchRole } =
     useNodeUpdate(nodeData);
@@ -39,7 +41,7 @@ export const EditableNodeTooltipSection = ({
       case "duration":
         return (
           <DurationComponent
-            selectedNode={nodeData}
+            selectedNode={editNodeData}
             onChangeDuration={({ duration, unit }) =>
               patchDuration(duration, unit)
             }
@@ -49,7 +51,7 @@ export const EditableNodeTooltipSection = ({
       case "role":
         return (
           <NodeInput
-            initialValue={text}
+            initialValue={editNodeData?.role}
             id={`${nodeData.id}-role`}
             onChange={(e: ChangeEvent<HTMLInputElement>) =>
               patchRole(e.target.value)
@@ -61,7 +63,7 @@ export const EditableNodeTooltipSection = ({
         return (
           <MarkdownEditor
             canEdit={nodeData.userCanEdit}
-            defaultText={text || ""}
+            defaultText={editNodeData?.description || ""}
             label={"Description"}
             onChange={patchDescription}
           />

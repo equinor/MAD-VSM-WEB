@@ -56,7 +56,7 @@ export const SubActivityNode = ({
   const [hoveringShape, setHoveringShape] = useState(false);
   const connectionNodeId = useStore((state) => state.connectionNodeId);
   const { addNode, isNodeButtonDisabled } = useNodeAdd();
-  const isEditingNode = useIsEditingNode(selected);
+  const { isEditingNode, editNodeData } = useIsEditingNode(selected, data);
 
   const handleQIPRContainerOnClick = useQIPRContainerOnClick(data);
   const shouldDisplayQIPR = useShouldDisplayQIPR(tasks, hovering, selected);
@@ -198,6 +198,7 @@ export const SubActivityNode = ({
         includeDuration
         duration={formatDuration(duration, unit)}
         includeEstimate={false}
+        editNodeData={editNodeData}
       />
       {renderNodeButtons()}
     </div>
