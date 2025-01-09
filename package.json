@@ -1,7 +1,7 @@
 {
   "name": "flyt",
   "radix-name": "flyt",
-  "version": "2.8.0",
+  "version": "2.9.0",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",

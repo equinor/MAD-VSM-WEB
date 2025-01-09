@@ -1,5 +1,31 @@
 # Changelog
 
+## [2.9.0](https://github.com/equinor/flyt/compare/v2.8.0...v2.9.0) (2025-01-09)
+
+
+### Features
+
+* Added seconds as option in duration unit ([#858](https://github.com/equinor/flyt/issues/858)) ([64213af](https://github.com/equinor/flyt/commit/64213af341c0de85e4ffbc746f482ceabbc2c184))
+* delete card button ([#856](https://github.com/equinor/flyt/issues/856)) ([dbe0354](https://github.com/equinor/flyt/commit/dbe0354d77c389c363176b28691efe82e4f226bb))
+* display edit box and tooltip below the card when cropped ([#842](https://github.com/equinor/flyt/issues/842)) ([759d01c](https://github.com/equinor/flyt/commit/759d01c963ccc037d897961467f81b23ea7a61f0))
+* enable writing directly on cards ([#823](https://github.com/equinor/flyt/issues/823)) ([34aad3f](https://github.com/equinor/flyt/commit/34aad3f350cea798d17d6a7072386a4fef4a0186))
+* Redesign sidebar ([#839](https://github.com/equinor/flyt/issues/839)) ([9a39225](https://github.com/equinor/flyt/commit/9a3922508c4829387afb7044654a02908c025d38))
+
+
+### Bug Fixes
+
+* Dragging cards sometimes cause crashes ([#852](https://github.com/equinor/flyt/issues/852)) ([5efa058](https://github.com/equinor/flyt/commit/5efa05835d62f85f75cfc3de375c41dbe1f58a3f))
+* Hidden nodes causes Flyt to crash ([#850](https://github.com/equinor/flyt/issues/850)) ([b237bc2](https://github.com/equinor/flyt/commit/b237bc24b63e42289180d29e9644d34e98070217))
+* Main activity can now be moved ([#838](https://github.com/equinor/flyt/issues/838)) ([591a405](https://github.com/equinor/flyt/commit/591a405b9859a906693de710bd5d992f5e3c9fee))
+* make seconds as choice in duration unit ([#866](https://github.com/equinor/flyt/issues/866)) ([0ba70d9](https://github.com/equinor/flyt/commit/0ba70d99e53b0602f4eae72419c865ca81e3f22f))
+* Redesign sidebar description ([#846](https://github.com/equinor/flyt/issues/846)) ([c499138](https://github.com/equinor/flyt/commit/c499138b7955d316604e3fef193f47a23496d50f))
+* Unable to delete edge bug ([#848](https://github.com/equinor/flyt/issues/848)) ([5f4d668](https://github.com/equinor/flyt/commit/5f4d668a506eea871d33d97ea4211e054164ecf2))
+
+
+### Reverts
+
+* "feat: Added seconds as option in duration unit" ([#865](https://github.com/equinor/flyt/issues/865)) ([3692194](https://github.com/equinor/flyt/commit/3692194f25a0341c4f33cdc547117f9963993b2e))
+
 ## [2.8.0](https://github.com/equinor/flyt/compare/v2.7.0...v2.8.0) (2024-11-20)
 
 ### Features
