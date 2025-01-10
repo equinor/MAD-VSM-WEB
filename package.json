@@ -64,7 +64,7 @@
     "reactflow": "11.11.3",
     "rehype-sanitize": "5.0.1",
     "remark-gfm": "3.0.1",
-    "sass": "1.64.1",
+    "sass": "1.82.0",
     "sharp": "0.32.6",
     "socket.io": "4.7.5",
     "socket.io-client": "4.7.5",
